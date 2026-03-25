@@ -26,7 +26,17 @@ To run this project locally on your machine:
    ```bash
    git clone [https://github.com/Cont-ai-ner/portfolio-2026.git](https://github.com/Cont-ai-ner/portfolio-2026.git)
 
-## Setup
-cd portfolio
-npm install
-npm run dev
+2. **Clone the repository:**
+   ```bash
+   cd portfolio
+
+3. **Install dependencies:**
+   ```bash
+   npm install
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+
+5. **Open your browser:**
+   Navigate to http://localhost:5173 to view the application.
