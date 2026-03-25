@@ -6,6 +6,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import FunPage from './pages/FunPage';
 import Footer from './components/Footer';
 import HireMe from './components/HireMe';
+import Background from './components/Background';
 
 // 1. Automatic Scroll-to-Top Component
 const ScrollToTop = () => {
@@ -30,14 +31,14 @@ const App = () => {
   }, [isDarkMode]);
 
   return (
-    // This wrapper handles the global background colors for light/dark mode
-    <div className={`min-h-screen flex flex-col transition-colors duration-500 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
+    // We removed the bg colors here because the Background component handles it now!
+    <div className="min-h-screen flex flex-col transition-colors duration-500 text-gray-900 dark:text-white">
       
-      {/* Listens for route changes and forces scroll to top */}
       <ScrollToTop />
+      <Background /> {/* <-- Our new animated background */}
 
-      {/* 3. The Fixed Navbar */}
-      <nav className="p-6 flex justify-between items-center max-w-6xl mx-auto w-full z-50">
+      {/* The Fixed Navbar */}
+      <nav className="p-6 flex justify-between items-center max-w-6xl mx-auto w-full z-10 relative">
         <Link to="/" className="text-xl font-bold tracking-wider hover:text-blue-500 transition-colors">
           Ganesh
         </Link>
@@ -49,15 +50,15 @@ const App = () => {
 
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
-            className="p-2 rounded-full hover:bg-gray-700/20 transition-colors text-xl"
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-xl"
           >
             {isDarkMode ? '☀️' : '🌙'}
           </button>
         </div>
       </nav>
 
-      {/* 4. The Clean Routing Area (No hardcoded pages here!) */}
-      <main className="flex-grow">
+      {/* The Clean Routing Area */}
+      <main className="flex-grow z-10 relative">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/resume" element={<ResumePage />} />
