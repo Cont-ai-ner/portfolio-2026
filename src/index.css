@@ -1,0 +1,10 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { font-family: sans-serif; scroll-behavior: smooth; }
+.glass { backdrop-filter: blur(12px); background: rgba(255,255,255,0.1); }
+.cursor-dot, .cursor-outline { pointer-events: none; position: fixed; border-radius: 50%; z-index: 50; }
+.cursor-dot { width: 8px; height: 8px; background: #f0f; transform: translate(-50%, -50%); }
+.cursor-outline { width: 40px; height: 40px; border: 2px solid #f0f; transform: translate(-50%, -50%); }
