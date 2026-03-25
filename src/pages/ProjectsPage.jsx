@@ -41,12 +41,11 @@ const projects = [
 
 const ProjectsPage = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-20 px-6">
+    <div className="min-h-screen py-20 px-6 z-10 relative">
       <div className="max-w-6xl mx-auto">
         <motion.h1 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-12 text-center text-blue-400"
+          initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}
+          className="text-4xl font-bold mb-12 text-center text-blue-600 dark:text-blue-400"
         >
           My Projects
         </motion.h1>
@@ -55,23 +54,19 @@ const ProjectsPage = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 hover:border-blue-500 transition-colors flex flex-col"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.03 }}
+              // GLASSMORPHISM CLASSES BELOW
+              className="bg-white/40 dark:bg-white/5 backdrop-blur-lg border border-white/40 dark:border-white/10 rounded-2xl p-6 shadow-xl flex flex-col hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-300"
             >
-              <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-              <p className="text-gray-400 mb-4 text-sm leading-relaxed flex-grow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{project.title}</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6 text-sm leading-relaxed flex-grow">
                 {project.description}
               </p>
               
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.techStack.map((tech, i) => (
-                  <span 
-                    key={i} 
-                    className="bg-gray-700 text-blue-300 text-xs px-3 py-1 rounded-full font-medium"
-                  >
+                  <span key={i} className="bg-blue-100/50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50 text-xs px-3 py-1 rounded-full font-medium">
                     {tech}
                   </span>
                 ))}
