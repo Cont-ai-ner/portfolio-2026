@@ -36,6 +36,12 @@ const projects = [
     title: "NodeMCU IoT Motion Alert System",
     description: "Built an IoT-based system using NodeMCU to collect and transmit PIR sensor data to the cloud. Enabled real-time monitoring and control by triggering a remote buzzer upon detecting movement, demonstrating practical cloud-based IoT communication.",
     techStack: ["NodeMCU", "IoT", "C++", "Sensors", "Cloud Comm"]
+  },
+  {
+    id: 7,
+    title: "GreenClass VR: Real-Time Environmental Sensor Simulation",
+    description: "Interactive Unity simulation demonstrating real-time classroom air quality management. Models CO₂ buildup from 65 students over a compressed 5-minute cycle, with automatic plant activation and manual AC controls. Features dynamic UI feedback, critical safety alerts, and particle systems to visualize HVAC airflow.",
+    techStack: ["Unity", "C#", "TextMeshPro", "Particle System", "VR"]
   }
 ];
 
